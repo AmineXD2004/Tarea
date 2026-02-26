@@ -1,35 +1,37 @@
-const input = document.getElementById('multimedia-input');
+// Seleccionamos los elementos del DOM
+const multimediaInput = document.getElementById('multimedia-input');
 const previewGrid = document.getElementById('preview-grid');
 
-input.addEventListener('change', function() {
-  const files = this.files;
+multimediaInput.addEventListener('change', function() {
+    // Recorremos cada archivo seleccionado
+    const files = Array.from(this.files);
 
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const reader = new FileReader();
+    files.forEach(file => {
+        const reader = new FileReader();
 
-    reader.onload = function(e) {
-      const div = document.createElement('div');
-      div.className = 'preview-item';
+        // Cuando el archivo termina de leerse
+        reader.onload = function(e) {
+            const container = document.createElement('div');
+            container.className = 'preview-item';
 
-      // Si es imagen
-      if (file.type.startsWith('image/')) {
-        div.innerHTML = `
-          <img src="${e.target.result}" alt="Preview">
-          <p>${file.name}</p>
-        `;
-      } 
-      // Si es video
-      else if (file.type.startsWith('video/')) {
-        div.innerHTML = `
-          <video src="${e.target.result}" controls></video>
-          <p>${file.name}</p>
-        `;
-      }
+            // Verificamos si es imagen o video
+            if (file.type.startsWith('image/')) {
+                container.innerHTML = `
+                    <img src="${e.target.result}" alt="Preview">
+                    <figcaption><p>📸 ${file.name.substring(0, 15)}...</p></figcaption>
+                `;
+            } else if (file.type.startsWith('video/')) {
+                container.innerHTML = `
+                    <video src="${e.target.result}" controls></video>
+                    <figcaption><p>🎥 ${file.name.substring(0, 15)}...</p></figcaption>
+                `;
+            }
 
-      previewGrid.appendChild(div);
-    }
+            // Agregamos al diseño
+            previewGrid.appendChild(container);
+        };
 
-    reader.readAsDataURL(file);
-  }
+        // Leer el archivo como URL de datos
+        reader.readAsDataURL(file);
+    });
 });
