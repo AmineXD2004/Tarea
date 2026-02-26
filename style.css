@@ -1,8 +1,12 @@
-/* Limpieza básica para evitar márgenes raros */
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
+/* =========================
+   RESET BÁSICO
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -12,61 +16,103 @@ body {
   line-height: 1.6;
 }
 
-/* Barra de navegación */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo { 
-  font-weight: bold; 
-  color: #ff5a5f; 
-  font-size: 1.6rem; 
+.logo {
+  font-weight: bold;
+  color: #ff5a5f;
+  font-size: 1.6rem;
   letter-spacing: 2px;
 }
 
-.nav-links { 
-  display: flex; 
-  list-style: none; 
-  gap: 20px; 
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
 
-.nav-links a { 
-  text-decoration: none; 
-  color: #333; 
-  font-weight: 500; 
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.btn-reserva { 
-  background: #ff5a5f; 
-  color: white !important; 
-  padding: 8px 18px; 
-  border-radius: 5px; 
+.nav-links a:hover {
+  color: #ff5a5f;
 }
 
-/* Imagen de portada gigante */
+.btn-reserva {
+  background: #ff5a5f;
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.btn-reserva:hover {
+  background: #e0484d;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-              url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200');
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200');
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
 }
 
-/* Área de subir archivos */
-.upload-area { 
-  padding: 40px 5%; 
-  text-align: center; 
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-#multimedia-input { 
-  display: none; /* Oculta el botón gris feo de Windows/Mac */
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+section {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+}
+
+/* =========================
+   SUBIDA DE ARCHIVOS
+========================= */
+.upload-area {
+  text-align: center;
+}
+
+#multimedia-input {
+  display: none;
 }
 
 .custom-loader {
@@ -78,33 +124,45 @@ body {
   display: inline-block;
   margin-top: 15px;
   margin-bottom: 30px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.custom-loader:hover { 
-  background: #0056b3; 
+.custom-loader:hover {
+  background: #0056b3;
+  transform: scale(1.05);
 }
 
-/* Sistema de cuadrícula para las fotos (Grid) */
+/* =========================
+   GRID
+========================= */
 .container-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
-  padding: 0 5% 40px 5%;
+  padding: 0 5%;
 }
 
-/* Tarjetas individuales de fotos */
+/* =========================
+   CARDS
+========================= */
 .preview-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden;
+  transition: 0.3s ease;
 }
 
-.preview-card img, .preview-card video {
+.preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.preview-card img,
+.preview-card video {
   width: 100%;
   height: 220px;
-  object-fit: cover; /* Evita que las fotos se aplasten */
+  object-fit: cover;
   display: block;
 }
 
@@ -112,10 +170,22 @@ figcaption {
   padding: 15px;
 }
 
-/* Pie de página */
-footer { 
-  text-align: center; 
-  padding: 30px; 
-  background: #222; 
-  color: #ccc; 
+figcaption h3 {
+  margin-bottom: 5px;
+}
+
+figcaption p {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #222;
+  color: #ccc;
+  margin-top: 40px;
 }
