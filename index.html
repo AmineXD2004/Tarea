@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horizon Travel | Oficial</title>
+  <meta name="description" content="Explora destinos exóticos y reserva tu próxima aventura con Horizon Travel.">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
     <nav class="navbar">
       <div class="logo">HORIZON</div>
+
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Destinos</a></li>
@@ -20,28 +23,48 @@
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero">
-      <h1>Tu próxima aventura comienza aquí</h1>
-      <p>Explora destinos exóticos con Horizon Travel</p>
+      <div class="hero-content">
+        <h1>Tu próxima aventura comienza aquí</h1>
+        <p>Explora destinos exóticos con Horizon Travel</p>
+      </div>
     </section>
 
+    <!-- SUBIDA DE ARCHIVOS -->
     <section class="upload-area">
       <h2>Comparte tus fotos y videos</h2>
+
       <div class="input-wrapper">
         <label for="multimedia-input" class="custom-loader">
           📁 Seleccionar archivos de mi viaje
         </label>
-        <input type="file" id="multimedia-input" accept="image/*,video/*" multiple>
+
+        <!-- Se oculta con CSS -->
+        <input 
+          type="file" 
+          id="multimedia-input" 
+          accept="image/*,video/*" 
+          multiple
+        >
       </div>
+
       <div id="preview-grid" class="container-grid"></div>
     </section>
 
+    <!-- DESTINOS -->
     <section class="destinations">
-      <h2 style="text-align: center; margin-bottom: 30px;">Destinos Populares</h2>
+      <h2 class="section-title">Destinos Populares</h2>
+
       <div class="container-grid">
-        
+
         <figure class="preview-card">
-          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600" alt="Torre Eiffel París">
+          <img 
+            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600" 
+            alt="Torre Eiffel en París"
+            loading="lazy"
+          >
           <figcaption>
             <h3>París Clásico</h3>
             <p>Francia - Desde $890</p>
@@ -49,7 +72,11 @@
         </figure>
 
         <figure class="preview-card">
-          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=600" alt="Islandia">
+          <img 
+            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=600" 
+            alt="Paisaje natural en Islandia"
+            loading="lazy"
+          >
           <figcaption>
             <h3>Islandia Mística</h3>
             <p>Europa - Desde $1,200</p>
@@ -58,12 +85,13 @@
 
       </div>
     </section>
+
   </main>
 
   <footer>
     <p>© 2026 Horizon Travel - Todos los derechos reservados</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
