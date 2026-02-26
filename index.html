@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon Travel | Tu Próxima Aventura</title>
+  <title>Horizon Travel | Explora el Mundo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +14,8 @@
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Destinos</a></li>
-        <li><a href="#">Experiencias</a></li>
         <li><a href="#">Blog</a></li>
-        <li><a href="#" class="btn-reserve">Reservar ahora</a></li>
+        <li><a href="#" class="btn-nav">Reservar ahora</a></li>
       </ul>
     </nav>
   </header>
@@ -25,33 +24,50 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Tu próxima aventura comienza aquí</h1>
-        <p>Explora destinos exóticos con guías certificadas.</p>
+        <p>Explora destinos exóticos con guías certificados.</p>
         <div class="hero-actions">
-          <a href="#" class="btn-primary">Ver destinos</a>
-          <a href="#" class="btn-secondary">Más información</a>
+          <a href="#" class="btn-main">Ver destinos</a>
         </div>
       </div>
     </section>
 
-    <section class="popular-destinations">
+    <section class="upload-section">
+      <h2>Comparte tu experiencia</h2>
+      <p>Sube fotos o videos de tus viajes con nosotros</p>
+      
+      <div class="custom-input">
+        <input type="file" id="multimedia-input" accept="image/*,video/*" multiple>
+        <label for="multimedia-input" class="upload-btn">
+          <span>📷 Seleccionar Archivos</span>
+        </label>
+      </div>
+
+      <div id="preview-grid" class="grid-container"></div>
+    </section>
+
+    <section class="destinations">
       <h2>Destinos Populares</h2>
-      <div class="destinations-grid">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=500" alt="Playa">
-          <figcaption>
-            <h3>Caribe Relax</h3>
-            <p>Desde $899</p>
-          </figcaption>
+      <div class="grid-container">
+        <figure class="card">
+          <img src="https://images.unsplash.com/photo-1500835595353-b0ad2e976491?auto=format&fit=crop&w=500" alt="Ecuador">
+          <figcaption><h3>Ruta de Volcanes</h3><p>Desde $450</p></figcaption>
         </figure>
-        </div>
+        <figure class="card">
+          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=500" alt="Islandia">
+          <figcaption><h3>Islandia Mística</h3><p>Desde $1,200</p></figcaption>
+        </figure>
+        <figure class="card">
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500" alt="Japón">
+          <figcaption><h3>Kyoto Tradicional</h3><p>Desde $980</p></figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-container">
-        </div>
-    <p class="copyright">© 2026 Horizon Travel - Todos los derechos reservados</p>
+    <p>© 2026 Horizon Travel - Todos los derechos reservados</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
