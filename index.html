@@ -13,7 +13,6 @@
   <header>
     <nav class="navbar">
       <div class="logo">HORIZON</div>
-
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Destinos</a></li>
@@ -34,14 +33,13 @@
 
     <!-- SUBIDA DE ARCHIVOS -->
     <section class="upload-area">
-      <h2>Comparte tus fotos y videos</h2>
+      <h2 class="section-title">Comparte tus fotos y videos</h2>
 
       <div class="input-wrapper">
         <label for="multimedia-input" class="custom-loader">
           📁 Seleccionar archivos de mi viaje
         </label>
 
-        <!-- Se oculta con CSS -->
         <input 
           type="file" 
           id="multimedia-input" 
@@ -59,6 +57,7 @@
 
       <div class="container-grid">
 
+        <!-- París -->
         <figure class="preview-card">
           <img 
             src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600" 
@@ -71,6 +70,7 @@
           </figcaption>
         </figure>
 
+        <!-- Islandia -->
         <figure class="preview-card">
           <img 
             src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=600" 
@@ -80,6 +80,32 @@
           <figcaption>
             <h3>Islandia Mística</h3>
             <p>Europa - Desde $1,200</p>
+          </figcaption>
+        </figure>
+
+        <!-- Maldivas -->
+        <figure class="preview-card">
+          <img 
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600" 
+            alt="Playa tropical en Maldivas"
+            loading="lazy"
+          >
+          <figcaption>
+            <h3>Maldivas Paradise</h3>
+            <p>Maldivas - Desde $1,850</p>
+          </figcaption>
+        </figure>
+
+        <!-- Japón -->
+        <figure class="preview-card">
+          <img 
+            src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=600" 
+            alt="Templo tradicional en Japón"
+            loading="lazy"
+          >
+          <figcaption>
+            <h3>Japón Tradicional</h3>
+            <p>Japón - Desde $1,450</p>
           </figcaption>
         </figure>
 
@@ -93,5 +119,6 @@
   </footer>
 
   <script src="script.js" defer></script>
+
 </body>
 </html>
